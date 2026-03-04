@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CricAnalytics | Organizer View</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="dark-mode organizer-body">
+    <nav class="navbar glassmorphism">
+        <div class="logo">
+            <span class="highlight">O</span>rganizer Analytics
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Dashboard</a></li>
+            <li><a href="organizer.html" class="active">Organizer</a></li>
+        </ul>
+    </nav>
+
+    <main class="container py-xl">
+        <div class="text-center animate-fade-in-up">
+            <h1 class="text-h1 mb-sm">Record <span class="highlight-gradient">Ball-by-Ball</span> Data</h1>
+            <p class="text-lead text-muted">Update live match events instantly to the server.</p>
+        </div>
+
+        <div class="card glassmorphism mt-xl max-w-lg mx-auto animate-fade-in-up delay-1">
+            <div class="card-header">
+                <h2 class="text-h2">Input Event</h2>
+            </div>
+            <div class="card-body">
+                <form id="organizer-form" class="organizer-form">
+                    <div class="form-group">
+                        <label>Active Match</label>
+                        <select id="org-match-select" class="input-modern w-full" required>
+                            <option value="">Loading matches...</option>
+                        </select>
+                    </div>
+
+                    <div class="grid grid-2 gap-md">
+                        <div class="form-group">
+                            <label>Innings</label>
+                            <select id="innings-no" class="input-modern w-full">
+                                <option value="1">1st Innings</option>
+                                <option value="2">2nd Innings</option>
+                            </select>
+                        </div>
+                        <div class="form-group flex gap-sm">
+                            <div class="w-half">
+                                <label>Over</label>
+                                <input type="number" id="over-no" class="input-modern w-full" value="0" min="0"
+                                    required>
+                            </div>
+                            <div class="w-half">
+                                <label>Ball</label>
+                                <input type="number" id="ball-no" class="input-modern w-full" value="1" min="1" max="6"
+                                    required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2 gap-md">
+                        <div class="form-group">
+                            <label>Batter</label>
+                            <select id="batter-id" class="input-modern w-full" required>
+                                <option value="">Select Batter</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Bowler</label>
+                            <select id="bowler-id" class="input-modern w-full" required>
+                                <option value="">Select Bowler</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-2 gap-md">
+                        <div class="form-group">
+                            <label>Runs Scored</label>
+                            <div class="run-buttons">
+                                <button type="button" class="btn-run" data-runs="0">0</button>
+                                <button type="button" class="btn-run" data-runs="1">1</button>
+                                <button type="button" class="btn-run" data-runs="2">2</button>
+                                <button type="button" class="btn-run" data-runs="3">3</button>
+                                <button type="button" class="btn-run btn-boundry" data-runs="4">4</button>
+                                <button type="button" class="btn-run btn-six" data-runs="6">6</button>
+                            </div>
+                            <input type="hidden" id="runs-scored" value="0">
+                        </div>
+                        <div class="form-group">
+                            <label>Extras (Wde, NB, LegByes)</label>
+                            <input type="number" id="extras" class="input-modern w-full" value="0" min="0">
+                        </div>
+                    </div>
+
+                    <div class="form-group wicket-toggle bg-dark-subtle p-md rounded mt-md">
+                        <label class="flex items-center gap-sm cursor-pointer">
+                            <input type="checkbox" id="is-wicket" class="custom-checkbox">
+                            <span class="text-h3 text-danger mb-0">WICKET FALLEN!</span>
+                        </label>
+
+                        <div id="wicket-details" class="hidden mt-sm grid grid-2 gap-md">
+                            <div>
+                                <label>Wicket Type</label>
+                                <select id="wicket-type" class="input-modern w-full">
+                                    <option value="bowled">Bowled</option>
+                                    <option value="caught">Caught</option>
+                                    <option value="lbw">LBW</option>
+                                    <option value="runout">Run Out</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label>Batter Out</label>
+                                <select id="batter-out-id" class="input-modern w-full">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions mt-xl">
+                        <button type="submit" class="btn btn-primary w-full btn-lg">Record Ball</button>
+                    </div>
+                    <div id="status-message" class="mt-md text-center"></div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/organizer.js"></script>
+</body>
+
+</html>

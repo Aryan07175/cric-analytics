@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Analytics Engine | Player Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dark-mode">
+    <nav class="navbar glassmorphism">
+        <div class="logo">
+            <span class="highlight">Cric</span>Analytics
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Dashboard</a></li>
+            <li><a href="organizer.html">Organizer</a></li>
+        </ul>
+    </nav>
+
+    <main class="container py-xl">
+        <section class="hero text-center animate-fade-in-up">
+            <h1 class="text-h1 mb-sm">Deep <span class="highlight-gradient">Analytics</span> for Local Leagues</h1>
+            <p class="text-lead text-muted">Real-time statistics, leaderboards, and match insights.</p>
+        </section>
+
+        <section class="dashboard-grid mt-xl">
+            <!-- Leaderboard Card -->
+            <div class="card glassmorphism animate-fade-in-up delay-1">
+                <div class="card-header">
+                    <h2 class="text-h2">Top Run Scorers</h2>
+                    <div class="icon">🏆</div>
+                </div>
+                <div class="card-body" id="batting-leaderboard">
+                    <div class="loader"></div>
+                </div>
+            </div>
+
+            <!-- Player Analytics Search Card -->
+            <div class="card glassmorphism animate-fade-in-up delay-2">
+                <div class="card-header">
+                    <h2 class="text-h2">Player Insights</h2>
+                    <div class="icon">🔍</div>
+                </div>
+                <div class="card-body">
+                    <div class="search-box mb-md">
+                        <select id="player-select" class="input-modern w-full">
+                            <option value="">Select a Player...</option>
+                        </select>
+                    </div>
+                    <div id="player-stats-container" class="stats-container hidden">
+                        <div class="stat-box">
+                            <div class="stat-label">Total Runs</div>
+                            <div class="stat-value highlight" id="stat-runs">0</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Highest Score</div>
+                            <div class="stat-value" id="stat-highest">0</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Average</div>
+                            <div class="stat-value text-accent" id="stat-avg">0.00</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-label">Strike Rate</div>
+                            <div class="stat-value text-warning" id="stat-sr">0.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Match Scorecard Card -->
+            <div class="card glassmorphism animate-fade-in-up delay-3 col-span-2">
+                <div class="card-header">
+                    <h2 class="text-h2">Recent Matches Live Score</h2>
+                    <div class="icon">🏏</div>
+                </div>
+                <div class="card-body">
+                    <div class="search-box mb-md">
+                        <select id="match-select" class="input-modern w-full">
+                            <option value="">Select a Match to view scores...</option>
+                        </select>
+                    </div>
+                    <div id="scorecard-container">
+                        <div class="text-center text-muted py-md">Select a match to view its scorecard.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
