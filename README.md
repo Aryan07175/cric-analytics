@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Local Cricket League Analytics & Draft Engine 🏏
 
 A powerful platform designed for local cricket tournament organizers and players. It tracks match data ball-by-ball and provides real-time, deep analytics including strike rates, economy, and moving averages.
@@ -85,3 +86,6 @@ The backend provides several RESTful endpoints:
 ## License
 
 This project is licensed under the ISC License.
+=======
+# cric-analytics
+>>>>>>> 84198584c888ed4f7a5b01d6c004ec1f53e6123e
