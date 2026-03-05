@@ -83,9 +83,6 @@ The backend provides several RESTful endpoints:
 *   `GET /api/analytics/bowler/:id` - Get detailed bowling stats for a player.
 *   `GET /api/leaderboards/batting` - Get the top run-scorers.
 
-## License
 
-This project is licensed under the ISC License.
-=======
-# cric-analytics
+
 
